@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mengatur Flexbox container untuk sidebar dan konten utama */
+.d-flex {
+    display: flex;
+    min-height: 100vh; /* Pastikan tinggi minimal adalah tinggi layar */
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    height: 100vh; /* Memastikan sidebar memenuhi tinggi layar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: sticky; /* Memastikan sidebar tetap di posisi saat scroll */
+    top: 0; /* Posisi sticky mulai dari bagian atas */
+    display: flex;
+    flex-direction: column;
+}
+.navbar-brand{
+    align-items: center;
+    font-size: x-large;
+    color :#ffffff;
+    padding-left: 20px;
+}
+.navbar-brand:hover{
+    color: #ffffff;
+}
+
+/* Styling untuk link di sidebar */
+.nav-link {
+    color: white;
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+.nav-link:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+.logout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.logout-button:focus {
+    outline: none;
+}
+
+/* CSS untuk memastikan logout di bagian bawah */
+.mt-auto {
+    margin-top: auto; /* Menempatkan elemen di bagian bawah kontainer flex */
+}
+
+h2 {
+    margin-top: 20px; /* Jarak atas dari elemen di atasnya */
+    margin-bottom: 20px; /* Jarak bawah dari form */
+}
+
+.img-fluid {
+    width: 100%;
+    height: 200px; /* Atur tinggi tetap */
+    object-fit: cover; /* Menjaga rasio aspek dan mengisi area dengan potongan gambar yang sesuai */
+    border-radius: 5px; /* Memberikan sudut membulat pada gambar */
+    margin-bottom: 10px; /* Jarak bawah antara gambar dan elemen lainnya */
+}
+
+/* Menetapkan ukuran tetap untuk gambar dengan menjaga rasio aspek */
+.uploaded-image {
+    width: 100%;
+    height: 200px; /* Tinggi tetap untuk gambar yang diupload */
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa merusak rasio aspek */
+    border-radius: 5px; /* Sudut membulat untuk gambar */
+    border: 1px solid #ddd; /* Batas ringan di sekitar gambar */
+    padding: 5px; /* Jarak di sekitar gambar */
+    background-color: #f8f9fa; /* Latar belakang terang di sekitar gambar */
+    margin-bottom: 15px; /* Jarak bawah antara gambar dan elemen lainnya */
+}
+
+/* Styling untuk tabel data divisi */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menggabungkan border tabel menjadi satu */
+    margin-top: 20px; /* Jarak atas dari elemen di atasnya */
+}
+
+table thead th {
+    background-color: #343a40; /* Warna latar belakang untuk header tabel */
+    color: white; /* Warna teks untuk header tabel */
+    padding: 10px; /* Padding di dalam sel header tabel */
+    text-align: left; /* Rata kiri untuk teks di header tabel */
+}
+
+table tbody td {
+    padding: 10px; /* Padding di dalam sel tabel */
+    border-bottom: 1px solid #ddd; /* Garis batas bawah sel tabel */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna latar belakang sel tabel pada baris genap */
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef; /* Warna latar belakang baris tabel saat hover */
+}
+
+/* Untuk gambar di dalam tabel */
+table img {
+    width: 100px; /* Lebar gambar di tabel */
+    height: auto; /* Tinggi gambar otomatis menjaga rasio aspek */
+    border-radius: 5px; /* Sudut membulat untuk gambar */
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 220px; /* Kurangi lebar sidebar di layar yang lebih kecil */
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* Kecilkan font di layar yang lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Kurangi lebar sidebar lebih jauh di layar tablet */
+    }
+
+    .nav-link {
+        padding-left: 15px; /* Kurangi padding untuk link di sidebar pada layar kecil */
+    }
+
+    .navbar-brand {
+        font-size: large; /* Kecilkan ukuran font di layar kecil */
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        padding: 0.5rem; /* Kurangi padding pada sidebar di layar yang lebih kecil */
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem; /* Kecilkan ukuran font di layar yang sangat kecil */
+    }
+
+    .nav-link {
+        padding-left: 10px;
+        font-size: 0.85rem;
+    }
+
+    .logout-button {
+        width: auto;
+        margin-left: auto;
+        font-size: 0.85rem; /* Kecilkan ukuran tombol pada layar kecil */
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .container-fluid {
+        padding: 1rem; /* Kurangi padding di layar yang lebih kecil */
+    }
+
+    /* Menyembunyikan sidebar di layar kecil dan menampilkannya hanya saat tombol toggle ditekan */
+    .sidebar.d-none {
+        display: none;
+    }
+}
+
+

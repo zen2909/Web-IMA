@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mengatur Flexbox container untuk sidebar dan konten utama */
+.d-flex {
+    display: flex;
+    min-height: 100vh; /* Pastikan tinggi minimal adalah tinggi layar */
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    height: 100vh; /* Memastikan sidebar memenuhi tinggi layar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: sticky; /* Memastikan sidebar tetap di posisi saat scroll */
+    top: 0; /* Posisi sticky mulai dari bagian atas */
+    display: flex;
+    flex-direction: column;
+}
+.navbar-brand{
+    align-items: center;
+    font-size: x-large;
+    color :#ffffff;
+    padding-left: 20px;
+}
+.navbar-brand:hover{
+    color: #ffffff;
+}
+
+/* Styling untuk link di sidebar */
+.nav-link {
+    color: white;
+    font-size: 1rem;
+    padding-left: 20px;
+}
+
+.nav-link:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+.logout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+.logout-button:focus {
+    outline: none;
+}
+
+.container { /* Adjust based on the width of the sidebar */
+    padding: 20px;
+}
+
+/* Style for each division block */
+.mb-5 {
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+/* Style for division name */
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Style for section headings (e.g., Program Kerja, Anggota) */
+h4 {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for program kerja section */
+.program-kerja-container, .anggota-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.program-kerja-item, .anggota-item {
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Style for images in program kerja and anggota */
+.program-kerja-img, .anggota-img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Style for each list item */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Style for the Edit button */
+.button-container {
+    display: flex;
+    justify-content: start;  /* Align buttons to the start of the container */
+    gap: 20px;               /* Space between buttons */
+    margin-top: 20px;        /* Space above the button container */
+}
+
+/* Styling for buttons */
+.button-container .btn {
+    padding: 10px 15px;      /* Padding inside the button */
+    font-size: 1rem;         /* Font size */
+    line-height: 1.5;        /* Line height */
+    transition: all 0.3s;    /* Smooth transition for hover effects */
+}
+
+.btn-secondary {
+    background-color: #6c757d;  /* Background color for secondary button */
+    border-color: #6c757d;      /* Border color */
+}
+
+.btn-primary {
+    background-color: #007bff;  /* Background color for primary button */
+    border-color: #007bff;      /* Border color */
+}
+
+.btn-danger {
+    background-color: #dc3545;  /* Background color for danger button */
+    border-color: #dc3545;      /* Border color */
+}
+
+.btn:hover {
+    opacity: 0.9;               /* Opacity change on hover */
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 220px; /* Kurangi lebar sidebar di layar yang lebih kecil */
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* Kecilkan font di layar yang lebih kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Kurangi lebar sidebar lebih jauh di layar tablet */
+    }
+
+    .nav-link {
+        padding-left: 15px; /* Kurangi padding untuk link di sidebar pada layar kecil */
+    }
+
+    .navbar-brand {
+        font-size: large; /* Kecilkan ukuran font di layar kecil */
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: column; /* Ubah arah flex menjadi kolom */
+        padding: 0.5rem; /* Kurangi padding pada sidebar di layar yang lebih kecil */
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem; /* Kecilkan ukuran font di layar yang sangat kecil */
+    }
+
+    .nav-link {
+        padding-left: 10px;
+        font-size: 0.85rem;
+    }
+
+    .logout-button {
+        width: auto;
+        margin-left: auto;
+        font-size: 0.85rem; /* Kecilkan ukuran tombol pada layar kecil */
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .container-fluid {
+        padding: 1rem; /* Kurangi padding di layar yang lebih kecil */
+    }
+
+    /* Menyembunyikan sidebar di layar kecil dan menampilkannya hanya saat tombol toggle ditekan */
+    .sidebar.d-none {
+        display: none;
+    }
+}
+
+

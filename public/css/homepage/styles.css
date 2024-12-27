@@ -1,0 +1,172 @@
+.navbar {
+    background-color: #4caf50;
+    padding-bottom: 5px;
+}
+
+.nav-link {
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: larger;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-caption img {
+    padding-bottom: 10px;
+    max-width: 100px;
+}
+
+.carousel-caption h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption { 
+        padding: 5px;
+        font-size: 0.7em;
+    }
+
+    .carousel-caption h2 {
+        font-size: 0.7em;
+    }
+
+    .carousel-caption p {
+        font-size: 0.7em;
+        padding-top: -30px;
+    }
+
+    .carousel-caption img {
+        max-width: 30px;
+    }
+}
+
+.content-history-title h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.card {
+    max-width: 800px;
+    font-family: "Roboto Condensed", sans-serif;
+    word-spacing: 0.01;
+    transition: transform 0.3s ease-in-out;
+}
+.card-title {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+}
+.card img {
+    max-width: 100%;
+}
+.card:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+.shift-up {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    position: relative;
+    top: -14px;
+}
+
+.shift-up a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.shift-up a:hover {
+    text-decoration: underline;
+}
+
+.content-activity-title h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.activity-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.activity-item h5{
+    padding-top: 10px;
+    font-size: x-large;
+}
+
+.activity-item img {
+    border-radius: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.activity-item:hover img {
+    transform: scale(1.1);
+}
+
+.footer {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.footer h5 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer p,
+.footer a {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    text-align: justify;
+    word-spacing: 0.03cm;
+}
+
+.footer a:hover {
+    color: #d4edda;
+    text-decoration: none;
+}
+
+.footer .container {
+    max-width: 960px;
+}
+
+.footer .row {
+    margin-bottom: 1rem;
+}
+
+.footer .text-center p {
+    margin: 0;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}

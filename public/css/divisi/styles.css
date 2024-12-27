@@ -1,0 +1,118 @@
+.navbar {
+    background-color: #4caf50;
+    padding-bottom: 5px;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255);
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: larger;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%; /* Memastikan card memiliki tinggi penuh untuk konsistensi */
+    display: flex;
+    flex-direction: column;
+}
+.container h1{
+    text-align: center;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-radius: 15px 15px 0 0;
+    height: 250px; /* Tinggi tetap untuk gambar */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    width: 100%; /* Pastikan gambar memenuhi lebar card */
+}
+
+/* Kontrol Panjang Judul dan Deskripsi */
+.card-title {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card-title:hover {
+    color: #0056b3;
+}
+
+.card-body {
+    background-color: #f8f9fa;
+    flex-grow: 1; /* Membuat body card bisa mengembang untuk mengisi sisa ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Agar tombol berada di bawah */
+}
+
+.card-text {
+    flex-grow: 1; /* Biarkan teks memenuhi ruang card */
+    max-height: 100px; /* Batas tinggi deskripsi */
+    overflow: hidden; /* Sembunyikan teks yang terlalu panjang */
+    text-overflow: ellipsis; /* Tampilkan elipsis jika teks terpotong */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.footer h5 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer p,
+.footer a {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    text-align: justify;
+    word-spacing: 0.03cm;
+}
+
+.footer a:hover {
+    color: #d4edda;
+    text-decoration: none;
+}
+
+.footer .container {
+    max-width: 960px;
+}
+
+.footer .row {
+    margin-bottom: 1rem;
+}
+
+.footer .text-center p {
+    margin: 0;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}

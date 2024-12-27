@@ -1,0 +1,50 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@keyframes float {
+    0% {    
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        background-size: cover; /* Menyesuaikan ukuran gambar */
+        background-position: center top; /* Memastikan gambar tetap terpusat di atas */
+        height: 60vh; /* Menurunkan tinggi elemen pada layar kecil */
+    }
+
+    .card img {
+        width: 80%; /* Menyesuaikan ukuran gambar logo */
+        margin-bottom: 20px; /* Memberikan jarak antara gambar dan konten */
+    }
+
+    .card {
+        padding-left: 20px; /* Menambah padding untuk konten */
+        padding-right: 20px;
+    }
+
+    .text-3xl {
+        font-size: 2rem; /* Menyesuaikan ukuran teks pada perangkat mobile */
+    }
+}
+
+.animate-float {
+    animation: float 2s ease-in-out infinite;
+}
