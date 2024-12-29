@@ -2,24 +2,14 @@
 
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SejarahImaController;
 use App\Http\Controllers\StrukturController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SejarahArosbayaController;
 use App\Http\Controllers\DivisiController;
-use App\Http\Controllers\PsdmController;
-use App\Http\Controllers\BphController;
-use App\Http\Controllers\KeilmuanController;
-use App\Http\Controllers\PpdController;
-use App\Http\Controllers\MinbaController;
-use App\Http\Controllers\ItController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AdminDivisicontroller;
-use App\Http\Controllers\DivisiDetailController;
-use App\Http\Controllers\DivisiPublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,22 +22,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
-// Route::get('/sejarah-ima', [SejarahImaController::class, 'index'])->name('sejarah_ima');
-Route::get('/struktur', [StrukturController::class, 'index'])->name('struktur');
-Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-// Route::get('/sejarah-arosbaya', [SejarahArosbayaController::class, 'index'])->name('sejarah_arosbaya');
-
-
-Route::get('/psdm', [PsdmController::class, 'index'])->name('Divisi_Psdm');
-Route::get('/bph', [BphController::class, 'index'])->name('Badan_pengurus_harian');
-Route::get('/keilmuan', [KeilmuanController::class, 'index'])->name('Keilmuan');
-Route::get('/ppd', [PpdController::class, 'index'])->name('ppd');
-Route::get('/minba', [MinbaController::class, 'index'])->name('minba');
-Route::get('/it', [ItController::class, 'index'])->name('it');
-
-
 Route::get('/login-admin', [AuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/login-admin', [AuthController::class, 'login'])->name('admin.login.submit');
 Route::post('/logout-admin', [AuthController::class, 'logout'])->name('admin.logout');

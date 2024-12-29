@@ -9,14 +9,12 @@
 <body>
     @include('components.navbar')
 
-    <!-- Konten Halaman Utama -->
     <div class="min-h-screen flex flex-col">
         <main class="flex-grow">
             @yield('content')
         </main>
 
-        <!-- Footer -->
-        @include('components.footer-dashboard')
+        @include('components.footer')
     </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-@extends('layouts.sejarah')
+@extends('layouts.dashboard')
 
 @section('content')
 

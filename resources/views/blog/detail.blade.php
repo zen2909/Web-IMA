@@ -1,21 +1,17 @@
-@extends('layouts.sejarah')
+@extends('layouts.dashboard')
 
 @section('content')
 
 @php
-// Memecah body menjadi array berdasarkan titik
+
 $paragraphs = explode('.', $berita->body);
 
-// Menghapus elemen kosong dari array
 $paragraphs = array_filter($paragraphs);
 
-// Menghitung jumlah kalimat
 $totalSentences = count($paragraphs);
 
-// Menentukan batas untuk paragraf pertama
-$splitIndex = ceil($totalSentences / 2); // Membagi kalimat menjadi dua bagian
+$splitIndex = ceil($totalSentences / 2);
 
-// Menggabungkan kalimat menjadi dua paragraf
 $firstParagraph = implode('.', array_slice($paragraphs, 0, $splitIndex)) . '.';
 $secondParagraph = implode('.', array_slice($paragraphs, $splitIndex)) . '.';
 @endphp
@@ -24,15 +20,15 @@ $secondParagraph = implode('.', array_slice($paragraphs, $splitIndex)) . '.';
     <div class="bg-cover bg-center text-center overflow-hidden" style="min-height: 500px; background-image: url('{{ asset('storage/' . $berita->foto) }}')">
     </div>
     <div class="max-w-3xl mx-auto">
-        <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
-            <div class="bg-white relative top-0 -mt-32 p-5 sm:p-10">
+        <div class="mt-3 bg- rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+            <div class="bg-white relative top-0 -mt-32 p-5 sm:p-10 bg-gray-100">
                 <h1 class="text-gray-900 font-bold text-3xl mb-2">{{$berita->judul}}</h1>
                 <h3 class="text-2xl font-bold my-5"># What is {{$berita->judul}} ?</h3>
                 <p class="text-base leading-8 my-5 text-justify">
-                    {{ $firstParagraph }} <!-- Paragraf pertama -->
+                    {{ $firstParagraph }}
                 </p>
                 <p class="text-base leading-8 my-5 text-justify">
-                    {{ $secondParagraph }} <!-- Paragraf kedua -->
+                    {{ $secondParagraph }}
                 </p>
             </div>
         </div>

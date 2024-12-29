@@ -1,4 +1,4 @@
-@extends('layouts.sejarah')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -14,13 +14,12 @@
     </div>
 </div>
 
-<div class="container mx-auto p-4">
-    <div class="flex">
-        <!-- Kolom Kiri -->
-        <div class="w-1/2 pr-4">
+<div class="container mx-auto p-4 bg-gray-100">
+    <div class="flex flex-col md:flex-row">
+        <div class="w-full md:w-1/2 pr-4 mb-4 md:mb-0">
             <div class="bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
                 <div class="p-4 bg-gray-600">
-                    <h2 class="text-2xl text-white font-bold text-center">Daftar Anggota</h2> <!-- Judul Kartu -->
+                    <h2 class="text-2xl text-white font-bold text-center">Daftar Anggota</h2>
                 </div>
                 <div class="-m-1.5 overflow-x-auto">
                     <div class="p-1.5 min-w-full inline-block align-middle">
@@ -54,11 +53,10 @@
             </div>
         </div>
 
-        <!-- Kolom Kanan -->
-        <div class="w-1/2 pl-4">
+        <div class="w-full md:w-1/2 pr-4">
             <div class="bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
                 <div class="p-4 bg-gray-600">
-                    <h2 class="text-2xl text-white font-bold text-center">Daftar Program Kerja</h2> <!-- Judul Kartu -->
+                    <h2 class="text-2xl text-white font-bold text-center">Daftar Program Kerja</h2>
                 </div>
                 <div class="-m-1.5 overflow-x-auto">
                     <div class="p-1.5 min-w-full inline-block align-middle">
@@ -90,5 +88,4 @@
         </div>
     </div>
 </div>
-
 @endsection

@@ -87,7 +87,30 @@
     </div>
 </div>
 
-<div class="relative bg-base-100 dark:bg-neutral-900">
+<div class="relative flex flex-col items-center w-full px-4 mx-auto md:flex-row sm:px-6 p-8 bg-white h-screen">
+    <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
+        <div class="text-left px-8">
+            <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-800 sm:text-5xl sm:leading-none md:text-6xl">
+                Struktur Kepengurusan
+                <span class="font-bold text-green-700">Ikatan Mahasiswa Arosbaya</span></span>
+                <div class="w-20 h-2 bg-green-700 my-4"></div>
+            </h2>
+        </div>
+    </div>
+    <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
+        <div class="relative w-full p-3 rounded md:p-8">
+            <div class="rounded-lg bg-white text-black w-full h-full">
+                @if($struktur && $struktur->image)
+                <img src="{{ asset('storage/' . $struktur->image)}}" class="w-full h-full object-cover rounded-lg" />
+                @else
+                <p class="text-center text-gray-500">Gambar tidak tersedia.</p>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="relative bg-gray-100 dark:bg-neutral-900">
     <div class="h-screen flex items-center justify-center text-center px-6 sm:px-12">
         <div class="max-w-7xl w-full space-y-6">
             <h1 class="text-4xl font-bold text-gray-800 dark:text-white">
@@ -131,15 +154,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         const scrollButton = document.getElementById('scroll-button');
 
-        // Menambahkan event listener untuk klik tombol
         scrollButton.addEventListener('click', function(e) {
-            e.preventDefault(); // Mencegah perilaku default dari tombol
+            e.preventDefault();
 
             const target = document.getElementById('hero-2');
-            if (target) { // Memastikan target ada
+            if (target) {
                 target.scrollIntoView({
-                    behavior: 'smooth', // Mengatur perilaku scroll menjadi halus
-                    block: 'start' // Mengatur posisi scroll ke bagian atas elemen
+                    behavior: 'smooth'
+                    , block: 'start'
                 });
             } else {
                 console.error('Target element not found: #hero-2');

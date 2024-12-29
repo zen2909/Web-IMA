@@ -9,10 +9,8 @@
 </head>
 <body>
     <div class="d-flex">
-        <!-- Sidebar -->
         <x-sidebar-admin />
 
-        <!-- Main Content -->
         <div class="container-fluid p-4">
             @yield('content')
         </div>

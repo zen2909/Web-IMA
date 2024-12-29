@@ -7,12 +7,6 @@ use App\Models\Structure;
 
 class StrukturController extends Controller
 {
-    public function index()
-    {
-        $Structures = Structure::all();
-        return view('struktur/index', compact('Structures'));
-    }
-
     public function edit()
     {
         $Structures = Structure::all();

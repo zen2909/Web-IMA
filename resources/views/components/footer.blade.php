@@ -1,4 +1,4 @@
-<footer class="footer footer-center bg-white text-black-content p-10">
+<footer class="footer footer-center bg-white-100 text-black-content p-10">
     <aside>
         <img src="{{ asset('images/logoima.svg') }}" alt="logoima" class="h-10">
         <p class="font-bold">
