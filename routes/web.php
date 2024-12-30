@@ -62,6 +62,9 @@ Route::get('/arosbaya', [SejarahArosbayaController::class, 'index'])->name('aros
 Route::get('/ima', [SejarahImaController::class, 'index'])->name('ima.index');
 Route::get('/divisi', [DivisiController::class, 'index'])->name('divisi.index');
 Route::get('/divisi/{id}', [DivisiController::class, 'show'])->name('divisi.detail');
-
 Route::get('/blog', [BeritaController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [BeritaController::class, 'detail'])->name('blog.detail');
+
+Route::get('/sidebar', function () {
+    return view('sidebar-admin');
+});

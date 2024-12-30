@@ -1,6 +1,7 @@
 import './bootstrap';
 import './sidebar';
 
+
 document.addEventListener("DOMContentLoaded", function() {
    
     document.getElementById('loading').style.display = 'flex';

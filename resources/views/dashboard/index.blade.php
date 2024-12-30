@@ -89,15 +89,6 @@
 
 <div class="relative flex flex-col items-center w-full px-4 mx-auto md:flex-row sm:px-6 p-8 bg-white h-screen">
     <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
-        <div class="text-left px-8">
-            <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-800 sm:text-5xl sm:leading-none md:text-6xl">
-                Struktur Kepengurusan
-                <span class="font-bold text-green-700">Ikatan Mahasiswa Arosbaya</span></span>
-                <div class="w-20 h-2 bg-green-700 my-4"></div>
-            </h2>
-        </div>
-    </div>
-    <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
         <div class="relative w-full p-3 rounded md:p-8">
             <div class="rounded-lg bg-white text-black w-full h-full">
                 @if($struktur && $struktur->image)
@@ -108,6 +99,16 @@
             </div>
         </div>
     </div>
+    <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
+        <div class="text-left px-8">
+            <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-800 sm:text-5xl sm:leading-none md:text-6xl">
+                Struktur Kepengurusan
+                <span class="font-bold text-green-700">Ikatan Mahasiswa Arosbaya</span></span>
+                <div class="w-20 h-2 bg-green-700 my-4"></div>
+            </h2>
+        </div>
+    </div>
+
 </div>
 
 <div class="relative bg-gray-100 dark:bg-neutral-900">
