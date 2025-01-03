@@ -12,13 +12,13 @@ class BeritaController extends Controller
     // Metode untuk halaman berita publik
     public function index()
     {
-        $berita = Berita::latest()->get(); // Mengambil semua berita terbaru
+        $berita = Berita::latest()->get();
         return view('blog.index', compact('berita'));
     }
 
     public function detail($id)
     {
-        $berita = Berita::findOrFail($id); // Mengambil berita berdasarkan ID atau gagal jika tidak ditemukan
+        $berita = Berita::findOrFail($id);
         return view('blog.detail', compact('berita'));
     }
 

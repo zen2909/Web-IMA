@@ -22,7 +22,7 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/admin-ima'); // Ganti dengan redirect setelah login sukses
+            return redirect()->intended('/admin'); // Ganti dengan redirect setelah login sukses
         }
 
         return redirect()->back()->withErrors(['username' => 'Username atau password salah.']);

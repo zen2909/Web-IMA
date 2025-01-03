@@ -7,6 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="flex">
+
     @include('components.sidebar')
 
     <div class="flex-grow min-h-screen ml-64 p-4">

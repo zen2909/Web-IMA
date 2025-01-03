@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Berita;
 use Illuminate\Http\Request;
+use App\Models\Berita;
 
-class AdminController extends Controller
+class AdminBlogController extends Controller
 {
-    // Metode untuk halaman admin
     public function index()
     {
-        $beritas = Berita::all();
-        return view('admin.index', compact('beritas'));
+        $blog = Berita::all();
+        return view('admin.blog.index', compact('blog'));
     }
 
+    public function add()
+    {
+        return view('admin.blog.add');
+    }
 
-    // Metode untuk menambah berita baru
     public function store(Request $request)
     {
         // Validasi data
@@ -34,17 +36,17 @@ class AdminController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('admin.index')->with('success', 'Berita berhasil ditambahkan.');
+        return redirect()->route('admin.blog')->with('success', 'Berita berhasil ditambahkan.');
     }
+
     public function edit($id)
     {
-        $berita = Berita::findOrFail($id);
-        return view('admin.edit', compact('berita'));
+        $blog = Berita::findOrFail($id);
+        return view('admin.blog.edit', compact('blog'));
     }
 
     public function update(Request $request, $id)
     {
-        // Validasi data
         $request->validate([
             'judul' => 'required|string|max:255',
             'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -53,7 +55,6 @@ class AdminController extends Controller
 
         $berita = Berita::findOrFail($id);
 
-        // Proses update data
         $berita->judul = $request->judul;
         $berita->body = $request->body;
 
@@ -64,14 +65,14 @@ class AdminController extends Controller
 
         $berita->save();
 
-        return redirect()->route('admin.index')->with('success', 'Berita berhasil diperbarui.');
+        return redirect()->route('admin.blog')->with('success', 'Berita berhasil diperbarui.');
     }
 
     public function destroy($id)
     {
-        $berita = Berita::findOrFail($id);
-        $berita->delete();
+        $blog = Berita::findOrFail($id);
+        $blog->delete();
 
-        return redirect()->route('admin.index')->with('success', 'Berita berhasil dihapus.');
+        return redirect()->route('admin.blog')->with('success', 'Berita berhasil dihapus.');
     }
 }

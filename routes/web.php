@@ -1,14 +1,16 @@
 <?php
 
+use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SejarahImaController;
 use App\Http\Controllers\SejarahArosbayaController;
 use App\Http\Controllers\DivisiController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AdminDivisicontroller;
+use App\Http\Controllers\AdminSejarahArosbayaController;
+use App\Http\Controllers\AdminSejarahImaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,23 +37,33 @@ Route::post('/logout-admin', [AuthController::class, 'logout'])->name('admin.log
 
 // Rute dilindungi dengan middleware auth
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/homemanage', [AdminDashboardController::class, 'index'])->name('admin.homemanage');
-    Route::post('/admin/update-carousel', [AdminDashboardController::class, 'updateCarousel'])->name('admin.update.carousel');
+
+    Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::post('/admin/update-dashboard', [AdminDashboardController::class, 'updateCarousel'])->name('admin.update.carousel');
     Route::post('/admin/update-activity', [AdminDashboardController::class, 'updateActivity'])->name('admin.update.activity');
     Route::post('/admin/update-history', [AdminDashboardController::class, 'updateHistory'])->name('admin.update.history');
     Route::post('/admin/update-structure', [AdminDashboardController::class, 'updateStructure'])->name('admin.update.structure');
 
-    Route::get('/admin-ima', [AdminController::class, 'index'])->name('admin.index');
-    Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
-    Route::get('/admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
-    Route::put('/admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
-    Route::delete('/admin/destroy/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+    Route::get('/admin/arosbaya', [AdminSejarahArosbayaController::class, 'index'])->name('admin.arosbaya');
+    Route::put('/admin/arosbaya', [AdminSejarahArosbayaController::class, 'update'])->name('admin.arosbayaupdate');
+
+    Route::get('/admin/ima', [AdminSejarahImaController::class, 'index'])->name('admin.ima');
+    Route::put('/admin/ima', [AdminSejarahImaController::class, 'update'])->name('admin.imaupdate');
+
+    Route::get('/admin/blog', [AdminBlogController::class, 'index'])->name('admin.blog');
+    Route::get('/admin/blog/add', [AdminBlogController::class, 'add'])->name('admin.blogadd');
+    Route::post('/admin/blog/store', [AdminBlogController::class, 'store'])->name('admin.blogstore');
+    Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'edit'])->name('admin.blogedit');
+    Route::put('/admin/blog/update/{id}', [AdminBlogController::class, 'update'])->name('admin.blogupdate');
+    Route::delete('/admin/blog/destroy/{id}', [AdminBlogController::class, 'destroy'])->name('admin.blogdestroy');
+
+
+
+
+
 
     Route::get('/admin/history-ima-manage', [SejarahImaController::class, 'edit'])->name('admin.history.ima.manage');
     Route::put('/admin/update-ima-history', [SejarahImaController::class, 'update'])->name('admin.history.ima.update');
-
-    Route::get('/admin/history-arosbaya-manage', [SejarahArosbayaController::class, 'edit'])->name('admin.history.arosbaya.manage');
-    Route::put('/admin/update-arosbaya-history', [SejarahArosbayaController::class, 'update'])->name('admin.history.arosbaya.update');
 
 
     Route::get('/admin/divisi', [AdminDivisiController::class, 'index'])->name('admin.divisions.index');
@@ -62,13 +74,3 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/divisi/{id}', [AdminDivisiController::class, 'update'])->name('admin.divisions.update');
 
 });
-
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
-Route::get('/arosbaya', [SejarahArosbayaController::class, 'index'])->name('arosbaya.index');
-Route::get('/ima', [SejarahImaController::class, 'index'])->name('ima.index');
-Route::get('/divisi', [DivisiController::class, 'index'])->name('divisi.index');
-Route::get('/divisi/{id}', [DivisiController::class, 'show'])->name('divisi.detail');
-Route::get('/blog', [BeritaController::class, 'index'])->name('blog.index');
-Route::get('/blog/{id}', [BeritaController::class, 'detail'])->name('blog.detail');
-
-Route::get('/sidebar', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
