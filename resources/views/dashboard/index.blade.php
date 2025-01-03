@@ -24,7 +24,7 @@
                 <p class="text-2xl md:text-xl lg:text-3xl text-white text-shadow-lg mb-6">
                     Alombhar Ta' Adhina Asal
                 </p>
-                <a id="scroll-button" href="#hero-2" class="btn bg-green-500 text-white text-sm md:text-lg px-6 py-2 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-white hover:text-green-500 hover:scale-105 hover:shadow-xl">
+                <a id="scroll-button" href="#hero-2" class="btn bg-green-700 text-white text-sm md:text-lg px-6 py-2 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-white hover:text-green-500 hover:scale-105 hover:shadow-xl">
                     Selengkapnya
                 </a>
             </div>
@@ -88,27 +88,27 @@
 </div>
 
 <div class="relative flex flex-col items-center w-full px-4 mx-auto md:flex-row sm:px-6 p-8 bg-white h-screen">
-    <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
+    <div class="flex items-center py-5 py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
         <div class="relative w-full p-3 rounded md:p-8">
             <div class="rounded-lg bg-white text-black w-full h-full">
                 @if($struktur && $struktur->image)
-                <img src="{{ asset('storage/' . $struktur->image)}}" class="w-full h-full object-cover rounded-lg" />
+                <img src="{{ asset('storage/' . $struktur->image)}}" class="w-full h-auto object-cover rounded-lg" />
                 @else
                 <p class="text-center text-gray-500">Gambar tidak tersedia.</p>
                 @endif
             </div>
         </div>
     </div>
+
     <div class="flex items-center py-5 md:w-1/2 md:pb-20 md:pt-10 md:pl-10">
-        <div class="text-left px-8">
-            <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-800 sm:text-5xl sm:leading-none md:text-6xl">
+        <div class="text-left px-4 sm:px-8">
+            <h2 class="text-3xl font-extrabold leading-10 tracking-tight text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl">
                 Struktur Kepengurusan
-                <span class="font-bold text-green-700">Ikatan Mahasiswa Arosbaya</span></span>
+                <span class="font-bold text-green-700">Ikatan Mahasiswa Arosbaya</span>
                 <div class="w-20 h-2 bg-green-700 my-4"></div>
             </h2>
         </div>
     </div>
-
 </div>
 
 <div class="relative bg-gray-100 dark:bg-neutral-900">
@@ -120,7 +120,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($activities as $card)
                 <div class="flex flex-col bg-white dark:bg-neutral-800 rounded-xl shadow-sm overflow-hidden transform transition-all hover:scale-105 hover:shadow-lg duration-300">
-                    <img class="w-full h-auto rounded-t-xl sm:rounded-se-none" src="{{ asset('storage/' . $card->image) }}" alt="Card Image">
+                    <img class="w-full h-48 object-cover rounded-t-xl sm:rounded-se-none" src="{{ asset('storage/' . $card->image) }}" alt="Card Image">
                     <div class="p-4 flex-1 md:p-5">
                         <h3 class="text-lg font-bold text-gray-800 dark:text-white">{{ $card->title }}</h3>
                         <p class="mt-1 text-gray-500 dark:text-neutral-400">{{ $card->description }}</p>
@@ -135,7 +135,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <script>

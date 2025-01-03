@@ -6,11 +6,11 @@
     <title>Web IMA</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
+<body class="flex">
     @include('components.sidebar')
 
-    <div class="min-h-screen flex flex-col">
-        <main class="flex-grow">
+    <div class="flex-grow min-h-screen ml-64 p-4">
+        <main class="p-4">
             @yield('content')
         </main>
     </div>
