@@ -24,7 +24,7 @@
                 <p class="text-2xl md:text-xl lg:text-3xl text-white text-shadow-lg mb-6">
                     Alombhar Ta' Adhina Asal
                 </p>
-                <a id="scroll-button" href="#hero-2" class="btn bg-green-700 text-white text-sm md:text-lg px-6 py-2 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-white hover:text-green-500 hover:scale-105 hover:shadow-xl">
+                <a id="scroll-button" href="#hero-2" class="btn bg-green-700 border-transparent text-white text-sm md:text-lg px-6 py-2 rounded-lg transform transition-all duration-300 ease-in-out hover:bg-white hover:text-green-500 hover:scale-105 hover:shadow-xl">
                     Selengkapnya
                 </a>
             </div>
@@ -50,7 +50,7 @@
                 {{ $ima->description }}</p>
             <div class="mt-5 sm:flex md:mt-8">
                 <div class="rounded-md shadow">
-                    <a href="" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-green-700 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue md:py-4 md:text-lg md:px-10">
+                    <a href="{{route('ima.index')}}" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-green-700 border hover:border-dark rounded-md hover:bg-white hover:text-green-500 hover:scale-105 hover:shadow-xl focus:outline-none focus:shadow-outline-blue md:py-4 md:text-lg md:px-10">
                         Selengkapnya
                     </a>
                 </div>
@@ -71,7 +71,7 @@
                 {{ $arosbaya->description }}</p>
             <div class="mt-5 sm:flex md:mt-8">
                 <div class="rounded-md shadow">
-                    <a href="" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-green-700 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue md:py-4 md:text-lg md:px-10">
+                    <a href="{{route('arosbaya.index')}}" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-green-700 border hover:border-dark rounded-md hover:bg-white hover:text-green-500 hover:scale-105 hover:shadow-xl focus:outline-none focus:shadow-outline-blue md:py-4 md:text-lg md:px-10">
                         Selengkapnya
                     </a>
                 </div>
