@@ -10,7 +10,7 @@
 
     <div class="relative z-10 flex flex-col justify-center items-center h-full text-center">
         <h1 class="text-5xl font-bold leading-tight mb-4">{{ $divisi->name }}</h1>
-        <p class="text-lg text-gray-300 mb-8">{{ $divisi->description }}</p>
+        <p class="text-lg text-gray-300 mb-8 max-w-2xl">{{ $divisi->description }}</p>
     </div>
 </div>
 

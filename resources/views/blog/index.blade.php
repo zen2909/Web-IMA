@@ -27,9 +27,9 @@
                 <p class="mt-3 text-sm font-semibold text-gray-800 dark:text-neutral-200 ">
                     {{ Str::limit($berita->body, 100) }}
                 </p>
-                <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 dark:text-neutral-200">
+                <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-blue-500 dark:text-neutral-200">
                     Selengkapnya
-                    <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1 pt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="m9 18 6-6-6-6" />
                     </svg>
                 </p>

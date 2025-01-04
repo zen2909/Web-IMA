@@ -10,7 +10,7 @@
     </div>
 </div>
 @foreach($carousels as $carousel)
-<div id="hero-1" class="hero h-screen relative bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $carousel->image) }}'); background-size: cover; background-position: center; min-height: 100vh;">
+<div id="hero-1" class="hero h-screen relative bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $carousel->image) }}'); background-size: cover; background-position: center; min-height: 100vh; object-cover;">
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative container mx-auto flex flex-col lg:flex-row items-center justify-center h-full px-4">
         <div class="card rounded-box grid h-auto w-full lg:w-1/2 flex-grow place-items-center lg:mb-0 px-10 md:px-20 order-1 lg:order-2 lg:mr-4">

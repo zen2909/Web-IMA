@@ -11,7 +11,7 @@
                     @csrf
                     @foreach($carousels as $carousel)
                     <div class="col-md-4">
-                        <img src="{{ asset('storage/' . $carousel->image) }}" class="img-fluid mb-3">
+                        <img src="{{ asset('storage/' . $carousel->image) }}" class="mb-3 rounded-lg object-cover">
                         <input type="file" name="image[]" class="form-control mb-4 border border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     @endforeach
