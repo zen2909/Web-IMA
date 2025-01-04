@@ -33,7 +33,7 @@ Route::get('/blog/{id}', [BeritaController::class, 'detail'])->name('blog.detail
 
 Route::get('/login-admin', [AuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/login-admin', [AuthController::class, 'login'])->name('admin.login.submit');
-Route::post('/logout-admin', [AuthController::class, 'logout'])->name('admin.logout');
+Route::get('/logout-admin', [AuthController::class, 'logout'])->name('admin.logout');
 
 // Rute dilindungi dengan middleware auth
 Route::middleware(['auth'])->group(function () {
@@ -52,25 +52,16 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/blog', [AdminBlogController::class, 'index'])->name('admin.blog');
     Route::get('/admin/blog/add', [AdminBlogController::class, 'add'])->name('admin.blogadd');
-    Route::post('/admin/blog/store', [AdminBlogController::class, 'store'])->name('admin.blogstore');
+    Route::post('/admin/blog', [AdminBlogController::class, 'store'])->name('admin.blogstore');
     Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'edit'])->name('admin.blogedit');
     Route::put('/admin/blog/update/{id}', [AdminBlogController::class, 'update'])->name('admin.blogupdate');
     Route::delete('/admin/blog/destroy/{id}', [AdminBlogController::class, 'destroy'])->name('admin.blogdestroy');
 
-
-
-
-
-
-    Route::get('/admin/history-ima-manage', [SejarahImaController::class, 'edit'])->name('admin.history.ima.manage');
-    Route::put('/admin/update-ima-history', [SejarahImaController::class, 'update'])->name('admin.history.ima.update');
-
-
-    Route::get('/admin/divisi', [AdminDivisiController::class, 'index'])->name('admin.divisions.index');
-    Route::post('/admin/divisi/store', [AdminDivisiController::class, 'store'])->name('admin.divisions.store');
-    Route::delete('/{division}', [AdminDivisiController::class, 'destroy'])->name('admin.divisions.destroy');
-
-    Route::get('/admin/divisi/{id}/edit', [AdminDivisiController::class, 'edit'])->name('admin.divisions.edit');
-    Route::put('/admin/divisi/{id}', [AdminDivisiController::class, 'update'])->name('admin.divisions.update');
+    Route::get('/admin/divisi', [AdminDivisiController::class, 'index'])->name('admin.divisi');
+    Route::post('/admin/divisi', [AdminDivisiController::class, 'store'])->name('admin.divisistore');
+    Route::get('/admin/divisi/add', [AdminDivisiController::class, 'add'])->name('admin.divisiadd');
+    Route::get('/admin/divisi/edit/{id}', [AdminDivisiController::class, 'edit'])->name('admin.divisiedit');
+    Route::put('/admin/divisi/edit/{id}', [AdminDivisiController::class, 'update'])->name('admin.divisiupdate');
+    Route::delete('/admin/divisi/{division}', [AdminDivisiController::class, 'destroy'])->name('admin.divisidestroy');
 
 });

@@ -15,11 +15,11 @@
             <table class="min-w-full rounded-xl table-auto">
                 <thead>
                     <tr class="bg-gray-100">
-                        <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize rounded-t-xl">No</th>
+                        <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize">No</th>
                         <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize">Judul</th>
                         <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize">Foto</th>
                         <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize">Isi Berita</th>
-                        <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize rounded-t-xl">Aksi</th>
+                        <th scope="col" class="p-5 text-center text-sm leading-6 font-semibold text-gray-900 capitalize">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-300">

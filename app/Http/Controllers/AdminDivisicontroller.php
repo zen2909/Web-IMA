@@ -9,10 +9,16 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminDivisicontroller extends Controller
 {
+
     public function index()
     {
         $divisions = Division::all();
-        return view('admin.divisions.index', compact('divisions'));
+        return view('admin.divisi.index', compact('divisions'));
+    }
+
+    public function add()
+    {
+        return view('admin.divisi.add');
     }
 
     public function store(Request $request)
@@ -44,13 +50,13 @@ class AdminDivisicontroller extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->back()->with('success', 'Divisi berhasil ditambahkan!');
+        return redirect()->route('admin.divisi')->with('success', 'Divisi berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
         $division = Division::findOrFail($id); // Cari divisi berdasarkan ID
-        return view('admin.divisions.edit', compact('division')); // Kirim data ke view
+        return view('admin.divisi.edit', compact('division')); // Kirim data ke view
     }
 
     public function update(Request $request, $id)
@@ -89,7 +95,7 @@ class AdminDivisicontroller extends Controller
             'image' => $division->image,
         ]);
 
-        return redirect()->route('admin.divisions.index')->with('success', 'Data divisi berhasil diperbarui!');
+        return redirect()->route('admin.divisi')->with('success', 'Data divisi berhasil diperbarui!');
     }
 
 
@@ -100,8 +106,10 @@ class AdminDivisicontroller extends Controller
             Storage::disk('public')->delete($division->image);
         }
 
+        // Hapus model
         $division->delete();
 
-        return redirect()->route('admin.divisions.index')->with('success', 'Divisi berhasil dihapus!');
+        // Redirect dengan pesan sukses
+        return redirect()->route('admin.divisi')->with('success', 'Divisi berhasil dihapus!');
     }
 }
