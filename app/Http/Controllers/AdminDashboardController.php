@@ -30,11 +30,9 @@ class AdminDashboardController extends Controller
             'image.*' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // Ensure 'image' is set and is an array
         $images = $request->file('image') ?? [];
 
         foreach ($images as $index => $file) {
-            // Store the file and update the Carousel model
             $imagePath = $file->store('images/carousel', 'public');
             Carousel::updateOrCreate(['id' => $index + 1], ['image' => $imagePath]);
         }

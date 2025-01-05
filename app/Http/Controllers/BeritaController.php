@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class BeritaController extends Controller
 {
-    // Metode untuk halaman berita publik
     public function index()
     {
         $berita = Berita::latest()->get();

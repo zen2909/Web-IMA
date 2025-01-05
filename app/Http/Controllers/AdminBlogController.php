@@ -20,14 +20,13 @@ class AdminBlogController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi data
+
         $request->validate([
             'judul' => 'required|string|max:255',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'body' => 'required',
         ]);
 
-        // Proses penyimpanan data
         $imagePath = $request->file('foto')->store('images', 'public');
 
         Berita::create([

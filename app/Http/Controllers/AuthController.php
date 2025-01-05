@@ -9,7 +9,7 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('login.index'); // Sesuaikan dengan view login Anda
+        return view('login.index');
     }
 
     public function login(Request $request)
@@ -22,7 +22,7 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/admin'); // Ganti dengan redirect setelah login sukses
+            return redirect()->intended('/admin');
         }
 
         return redirect()->back()->withErrors(['username' => 'Username atau password salah.']);
@@ -31,6 +31,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('admin.login'); // Ganti dengan route login Anda
+        return redirect()->route('admin.login');
     }
 }

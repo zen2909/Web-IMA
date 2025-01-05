@@ -55,8 +55,8 @@ class AdminDivisicontroller extends Controller
 
     public function edit($id)
     {
-        $division = Division::findOrFail($id); // Cari divisi berdasarkan ID
-        return view('admin.divisi.edit', compact('division')); // Kirim data ke view
+        $division = Division::findOrFail($id);
+        return view('admin.divisi.edit', compact('division'));
     }
 
     public function update(Request $request, $id)
@@ -70,22 +70,22 @@ class AdminDivisicontroller extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $division = Division::findOrFail($id); // Cari divisi berdasarkan ID
+        $division = Division::findOrFail($id);
 
         $members = $request->members ? json_encode(explode(',', $request->members)) : json_encode([]);
         $roles = $request->roles ? json_encode(explode(',', $request->roles)) : json_encode([]);
         $work_programs = $request->work_programs ? json_encode(explode(',', $request->work_programs)) : json_encode([]);
 
         if ($request->hasFile('image')) {
-            // Hapus gambar lama jika ada
+
             if ($division->image) {
                 Storage::disk('public')->delete($division->image);
             }
-            // Simpan gambar baru
+
             $division->image = $request->file('image')->store('images/divisions', 'public');
         }
 
-        // Perbarui data
+
         $division->update([
             'name' => $request->name,
             'description' => $request->description,
@@ -106,10 +106,8 @@ class AdminDivisicontroller extends Controller
             Storage::disk('public')->delete($division->image);
         }
 
-        // Hapus model
         $division->delete();
 
-        // Redirect dengan pesan sukses
         return redirect()->route('admin.divisi')->with('success', 'Divisi berhasil dihapus!');
     }
 }
