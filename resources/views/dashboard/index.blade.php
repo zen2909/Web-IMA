@@ -127,7 +127,7 @@
                     </div>
                     <div class="p-4 border-t sm:px-5 dark:border-neutral-700">
                         <p class="text-xs text-gray-500 dark:text-neutral-500">
-                            Last updated {{ $card->updated_at->diffForHumans() }}
+                            Last updated {{ $card->updated_at}}
                         </p>
                     </div>
                 </div>
