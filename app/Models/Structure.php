@@ -9,7 +9,7 @@ class Structure extends Model
 {
     use HasFactory;
 
-    protected $table = 'Structures';
+    protected $table = 'structures';
 
     protected $fillable = ['title', 'image'];
 }
