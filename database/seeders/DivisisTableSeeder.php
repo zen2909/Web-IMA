@@ -13,7 +13,7 @@ class DivisisTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('divisions')->insert([
+        DB::table('divisis')->insert([
             [
                 'name' => '1',
                 'description' => 'Divisi yang bertugas untuk mengembangkan kemampuan seluruh anggota Ikatan Mahasiswa Arosbaya dalam bidang akademis.',
