@@ -14,7 +14,7 @@ class StructureTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Structures')->insert([
+        DB::table('structures')->insert([
             [
                 'image' => 'images/strukturpengurus.png',
                 'title' => 'Sejarah IMA',
