@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SejarahImaController;
 use App\Http\Controllers\SejarahArosbayaController;
 use App\Http\Controllers\DivisiController;
@@ -11,6 +10,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\AdminDivisicontroller;
 use App\Http\Controllers\AdminSejarahArosbayaController;
 use App\Http\Controllers\AdminSejarahImaController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+// Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/arosbaya', [SejarahArosbayaController::class, 'index'])->name('arosbaya.index');
 Route::get('/ima', [SejarahImaController::class, 'index'])->name('ima.index');
 Route::get('/divisi', [DivisiController::class, 'index'])->name('divisi.index');
@@ -35,10 +36,14 @@ Route::get('/login-admin', [AuthController::class, 'showLoginForm'])->name('admi
 Route::post('/login-admin', [AuthController::class, 'login'])->name('admin.login.submit');
 Route::get('/logout-admin', [AuthController::class, 'logout'])->name('admin.logout');
 
+Route::get('/login', [LoginController::class, 'showLoginform'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Rute dilindungi dengan middleware auth
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('/admin/update-dashboard', [AdminDashboardController::class, 'updateCarousel'])->name('admin.update.carousel');
     Route::post('/admin/update-activity', [AdminDashboardController::class, 'updateActivity'])->name('admin.update.activity');
     Route::post('/admin/update-history', [AdminDashboardController::class, 'updateHistory'])->name('admin.update.history');

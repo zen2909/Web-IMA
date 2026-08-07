@@ -5,33 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Division extends Model
+class Campus extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
         'slug',
-        'description',
-        'vision',
-        'mission',
-        'head_member_id',
-        'icon',
-        'order',
+        'short_name',
+        'logo',
+        'city',
+        'province',
         'is_active',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
-        'order' => 'integer',
     ];
 
     // Relationships
-    public function headMember()
-    {
-        return $this->belongsTo(Member::class, 'head_member_id');
-    }
-
     public function members()
     {
         return $this->hasMany(Member::class);
@@ -42,37 +34,15 @@ class Division extends Model
         return $this->hasMany(Member::class)->where('is_active', true);
     }
 
-    public function programs()
-    {
-        return $this->hasMany(Program::class);
-    }
-
-    public function activities()
-    {
-        return $this->hasMany(Activity::class);
-    }
-
     // Accessor for member count
     public function getMemberCountAttribute()
     {
         return $this->activeMembers()->count();
     }
 
-    // Accessor for program count
-    public function getProgramCountAttribute()
-    {
-        return $this->programs()->count();
-    }
-
-    // Scope for active divisions
+    // Scope for active campuses
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
-    }
-
-    // Scope ordered by order field
-    public function scopeOrdered($query)
-    {
-        return $query->orderBy('order');
     }
 }

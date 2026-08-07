@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikatan Mahasiswa Arosbaya</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'Admin Panel - IMA Arosbaya')</title>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="flex">
 
-    @include('components.sidebar')
+<body>
+    <div class="flex min-h-screen bg-slate-50">
+        <!-- Sidebar -->
+        <x-admin.sidebar />
 
-    <div class="flex-grow min-h-screen ml-64 p-4">
-        <main class="p-4">
-            @yield('content')
-        </main>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <x-admin.header />
+
+            <!-- Page Content -->
+            <main class="flex-1 p-8 overflow-y-auto">
+                @yield('content')
+            </main>
+        </div>
     </div>
+
+    <!-- Alpine.js untuk dropdown dan toggle -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
+
 </html>

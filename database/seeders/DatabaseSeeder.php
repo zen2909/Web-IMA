@@ -9,14 +9,24 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AdminUserSeeder::class,
-            CarouselsTableSeeder::class,
-            ActivitiesTableSeeder::class,
-            HistoriesTableSeeder::class,
-            HistoryImaTableSeeder::class,
-            HistoryArosbayaTableSeeder::class,
-            StructureTableSeeder::class,
-            DivisisTableSeeder::class,
+            // Master Data
+            PositionSeeder::class,
+            PeriodSeeder::class,
+            CampusSeeder::class,
+            DivisionSeeder::class,
+            
+            // Spatie Permission & Admin User
+            RolePermissionSeeder::class,
+            
+            // Member Data
+            MemberSeeder::class,
+            
+            // Content Data
+            ProgramSeeder::class,
+            ActivitySeeder::class,
+            BlogSeeder::class,
+            GallerySeeder::class,
+            
         ]);
     }
 }
